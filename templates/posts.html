@@ -12,7 +12,6 @@ body {
   font-family: Arial;
   padding: 20px;
   background: #f1f1f1;
-  
 }
 
 .header {
@@ -50,22 +49,23 @@ body {
 <body>
 
 <div class="header">
+<a style="text-decoration: none; color: black;" href="../">
   <h2>Kshitij's blog</h2>
+  </a>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
-  {% for post in posts reversed %}
-   <a style="text-decoration: none; color: black;" href="{% url 'posts' post.id%}">
+   
     <div class="card">
      
         <h2>{{post.title}}</h2>
         <h5>{{post.created_at}}</h5>
-        <p>{{post.body|truncatewords:20}}</p>
+        <p>{{post.body}}</p>
       
     </div>
-    </a>
-    {% endfor %}
+    
+
     
   </div>
 </div>
